@@ -1,0 +1,53 @@
+#MusicPlayer {
+	height: 400px;
+	display: inline-block;
+	overflow: scroll;
+	margin-left: 1.5vw;
+}
+
+#MusicPlayerContainer img {
+	
+	
+}
+
+#MusicPlayer h1 {
+	align-items: center;
+	font-size: 1em;
+	
+}
+
+#MusicPlayer audio {
+	width: 45vw;
+	height: 25px;
+	align-items: center;
+}
+
+#LicensesWDealsPrices span {
+	display: inline-block;
+	align-items: center;
+}
+
+#LicensesWDealsPrices span h1 {
+	text-align: center;
+}
+
+#AboutMe {
+		color: black;
+		display: inline-block;
+		align-items: center;
+}
+
+#AboutMe p {
+		margin-top: 100px;
+}
+
+#Discography h {
+		align-items: center;
+}
+body {
+  background-color: powderblue;
+}
+
+footer {
+	background-color: pink;
+}

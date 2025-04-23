@@ -21,6 +21,7 @@
 #LicensesWDealsPrices span {
 	display: inline-block;
 	align-items: center;
+	font-size: 1em;
 }
 
 #LicensesWDealsPrices span h1 {
@@ -32,13 +33,126 @@
 		justify-content: space-evenly;
 }
 
-#DiscographyInfo {
+#AboutMe p {
+		font-size: 0.5em;
 		align-items: center;
+		text-align: left;
 }
+
+#DiscographyInfo {
+		display: inline-block;
+		justify-content: space-evenly;
+}
+
+#DiscographyInfo h1 {
+	text-align: center;
+}
+
+
 body {
   background-color: powderblue;
 }
 
 footer {
 	background-color: pink;
+}
+
+
+@media (min-width: 390px) {
+		#AboutMe p {
+		font-size: 0.5em;
+}
+
+@media (min-width: 400px) {
+		#AboutMe p {
+		font-size: 0.575em;
+		}
+		
+		#LicensesWDealsPrices span {
+		font-size: 1em;
+}
+}
+
+@media (min-width: 440px) {
+		#AboutMe p {
+		font-size: 0.6em;
+}
+@media (min-width: 450px) {
+		#AboutMe p {
+		font-size: 0.650em;
+}
+@media (min-width: 470px) {
+		#AboutMe p {
+		font-size: 0.675em;
+}
+@media (min-width: 480px) {
+		#AboutMe p {
+		font-size: 0.7em;
+}
+@media (min-width: 500px) {
+		#AboutMe p {
+		font-size: 0.725em;
+}
+
+@media (min-width: 520px) {
+		#AboutMe p {
+		font-size: 0.750em;
+}
+@media (min-width: 540px) {
+		#AboutMe p {
+		font-size: 0.775em;
+}
+@media (min-width: 560px) {
+		#AboutMe p {
+		font-size: 0.8em;
+}
+@media (min-width: 580px) {
+		#AboutMe p {
+		font-size: 0.825em;
+}
+@media (min-width: 600px) {
+		#AboutMe p {
+		font-size: 0.850em;
+		}
+}
+@media (min-width: 620px) {
+		#AboutMe p {
+		font-size: 0.875em;
+}
+@media (min-width: 640px) {
+		#AboutMe p {
+		font-size: 0.9em;
+}
+@media (min-width: 660px) {
+		#AboutMe p {
+		font-size: 0.925em;
+}
+@media (min-width: 670px) {
+		#AboutMe p {
+		font-size: 0.950em;
+}
+@media (min-width: 690px) {
+		#AboutMe p {
+		font-size: 0.975em;
+}
+@media (min-width: 710px) {
+		#AboutMe p {
+		font-size: 1em;
+}
+@media (min-width: 730px) {
+		#AboutMe p {
+		font-size: 1.25em;
+}
+@media (min-width: 800px) {
+		#AboutMe p {
+		font-size: 1.30em;
+		
+}
+@media (min-width: 815px) {
+		#AboutMe p {
+		font-size: 1.40em;
+}
+@media (min-width: 1025px) {
+		#AboutMe p {
+		font-size: 1.50em;
 }

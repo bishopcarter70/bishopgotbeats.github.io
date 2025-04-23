@@ -1,17 +1,14 @@
+#MusicPlayerContainer {
+}
+
 #MusicPlayer {
 	height: 400px;
 	display: inline-block;
 	overflow: scroll;
-	margin-left: 1.5vw;
 }
-
-#MusicPlayerContainer img {
 	
-	
-}
 
 #MusicPlayer h1 {
-	align-items: center;
 	font-size: 1em;
 	
 }
@@ -19,7 +16,6 @@
 #MusicPlayer audio {
 	width: 45vw;
 	height: 25px;
-	align-items: center;
 }
 
 #LicensesWDealsPrices span {
@@ -33,15 +29,10 @@
 
 #AboutMe {
 		color: black;
-		display: inline-block;
-		align-items: center;
+		justify-content: space-evenly;
 }
 
-#AboutMe p {
-		margin-top: 100px;
-}
-
-#Discography h {
+#DiscographyInfo {
 		align-items: center;
 }
 body {

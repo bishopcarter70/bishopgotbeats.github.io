@@ -156,3 +156,8 @@ footer {
 		#AboutMe p {
 		font-size: 1.50em;
 }
+@media (min-width: 1108px) {
+		#AboutMe p {
+		font-size: 1.75em;
+}
+

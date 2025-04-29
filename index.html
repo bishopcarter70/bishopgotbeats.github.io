@@ -11,7 +11,12 @@ body {background-color: blue;
 <body>
 	<h1 style="text-align:center;"> Music Player </h1>
 	<section class= "MusicPlayerContainer"> 
-		<img src ="Record Player.jpg" alt ="Record Player.jpg" width="500vw" height="400px">
+		<picture>
+  		<source media="(min-width:360px)" srcset="BishopGotBeatsDreads360x640.png">
+  		<source media="(min-width:768px)" srcset="BishopGotBeatsDreads768x1024.png">
+		<source media="(min-width:1366px)" srcset="BishopGotBeatsDreads1366x768.png">
+  		<img src="BishopGotBeatsDreads360x640.png" alt="BishopGotBeatsGuitar" style="width:50vw; height: 25vh;">
+		</picture> 
 		<div id = "MusicPlayer"> 
 			<h1 class ="PlayerWTitle">Aaliyah</h1>
 				<audio controls pause download>
@@ -112,14 +117,14 @@ body {background-color: blue;
 				<audio controls pause>
 				<source src="Win 150BPM Trap.mp3" type="audio/mpeg">
 				Your browser does not support the audio element.
-				</audio> 
-			
+				</audio> 			
 		</div>
 	</section>
 	
 	
 	<section id="LicensesWDealsPrices"> 
 	<h1 style="text-align:center; font-size: 1em; color:red;"> All Beats 50% Off. Exclusives - Buy 1, Get 1 Free.</h1>
+		<div id="Licenses">
 		<span>
 			<h1> MP3 - $9.99 </h1>
 				<ul>
@@ -144,17 +149,28 @@ body {background-color: blue;
 					<li> <strong> Producer Still Owns Rights </strong> </li>
 				</ul>
 		</span>
+		</div>
+		<input type="image" name="submit" border="0" 
+		src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" alt="Buy Now"> 
+		<img alt="" border="0" width="1" height="1" 
+		src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+		</form>
 	</section>
 	<section id="AboutMe">
-		<img style="float:right;"
-		src ="BishopGotBeats - Guitar.png" alt ="BishopGotBeats - Guitar" width="500vw" height="400px"> </img>
 		<p> BishopGotBeats also known as Dayan Jean, Dayanmakebeats is a Haitian-American music producer that was born in Port-au-Prince, Haiti
 		on January 30, 2001. At the age of 9, Bishop moved to Flatbush, Brooklyn NY to live with his father.
 		That was when, Bishop started experimenting with MixCraft, Fl Studio & would spent the remaining of his childhood. 
-		While attending Walt Whitman Middle School, Bishop started making beats where he was inspired by 
+		<br>While attending Walt Whitman Middle School, Bishop started making beats where he was inspired by 
 		Speaker Knockerz, Chief Keef, Young Chop & Future.Once he got to high school, Bishop kept improving his craft by 
 		developing his Photoshop skills, mixing and audio engineering.In 2016, Bishop sold a beat to G3Chris also known as MixbyEl
-		and that led to his first song called Want From Me. </p>
+		and that led to his first song called Want From Me.
+		</p>
+		<picture>
+  		<source media="(min-width:360px)" srcset="BishopGotBeatsGuitar360x640.png">
+  		<source media="(min-width:768px)" srcset="BishopGotBeatsGuitar768x1024.png">
+		<source media="(min-width:1366px)" srcset="BishopGotBeatsGuitar1366x768.png">
+  		<img src="BishopGotBeatsGuitar360x640" alt="BishopGotBeatsGuitar" style="width:50vw; height:25vh;">
+		</picture> 
 	</section>
 	
 	<section id="Discography">

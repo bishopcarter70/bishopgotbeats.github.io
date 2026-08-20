@@ -1,5 +1,6 @@
-                                          // VARIABLES
-const searchInput = document.getElementById("PlaylistSearchField");
+// VARIABLES
+const NavToggle = document.getElementById("NavToggle");
+const searchInput = document.getElementById("SearchBeat");
 const Beat = document.getElementById("Beat")
 const PlayPauseBtn = document.getElementById("PlayPauseBtn")
 const PrevButton = document.getElementById("PrevBtn")
@@ -8,7 +9,6 @@ const ProgressBar = document.getElementById("ProgressBarFill");
 const TimeDisplay = document.getElementById("TimeDisplay");
 const DownloadBeatButton = document.getElementById("DownloadButton")
 const AddToCartButton = document.getElementById("AddToCartButton")
-const OpenPlayList = document.getElementById("PlaylistHamburger")
 const BeatName = document.getElementById("BeatTitle")
 const BeatGenre = document.getElementById("BeatGenre")
 let currentSongIndex = 1;
@@ -16,6 +16,9 @@ let isPlaying = false;
 let cart = [];
 
                                         //EVENT LISTENERS
+NavToggle.addEventListener('click', ()=>{
+  popupMenu.style.display = "block"
+})
 searchInput.addEventListener('input', (event) => {
   const searchTerm = event.target.value;
   const filteredSongs = searchPlaylist(searchTerm);
@@ -39,11 +42,6 @@ Beat.addEventListener('ended', () => {
 ProgressBar.addEventListener('drag', () => {
     Beat.currentTime = ProgressBarBar.value;
 });
-OpenPlayList.addEventListener('click', function showPlaylist() {
-    PlaylistModal.style.display = "block"; 
-    displayTracksFromPlaylist();
-    
-});
 //CloseButton.addEventListener('click', function CloseModal() {
 //  LicenseModal.style.display = "none";
 //  FreeBeatDownloadModal.style.display = "none";
@@ -51,6 +49,11 @@ OpenPlayList.addEventListener('click', function showPlaylist() {
 
 
                                           // FUNCTIONS
+function toggleMenu() {
+  const menu = document.getElementById('popupMenu');
+  menu.classList.toggle('open');
+}
+
 function loadBeat(currentSongIndex) {
   Beat.src = playlist[currentSongIndex].src;
   BeatName.innerHTML = playlist[currentSongIndex].title;
@@ -59,6 +62,14 @@ function loadBeat(currentSongIndex) {
   // You might also want to update displayed song information
 }
 
+function addtocartModal() {
+  LicenseModalContainer.style.display = "block"; 
+  const BeatInformation = document.createElement("div");
+  const BeatTitle = document.createElement("h1")
+  BeatTitle.innerHTML = playlist[currentSongIndex].title;
+  LicenseModal.appendChild(BeatInformation);
+  LicenseModal.appendChild(BeatTitle);
+}
 
 //Playlist Controls
 function playPause() {
@@ -102,11 +113,9 @@ function displayTime(element, totalDuration, currentTime) {
     ProgressBar.style.width = `${progressPercent}%`;
 }
 
-// Display Tracks In PlayList
-const MusicInfodiv = document.getElementById("MusicInfoDiv")
 function displayTracksFromPlaylist() {
-  const DisplayTracks = document.getElementById("BeatsFromPlaylist");
-  BeatsFromPlaylist.innerHTML = '';
+  const BeatsPlaylist = document.getElementById("BeatsPlaylist")
+  BeatsPlaylist.innerHTML = '';
  playlist.forEach((element, index)=>{
 //    console.log(element, index);
     let DisplayPlaylist = document.createElement("div");
@@ -130,7 +139,9 @@ function displayTracksFromPlaylist() {
     ActionsContainer.appendChild(AddToCartBtn);
     ActionsContainer.appendChild(DownloadBtn);
     DisplayPlaylist.appendChild(ActionsContainer);
-    BeatsFromPlaylist.appendChild(DisplayPlaylist);
+    BeatsPlaylist.appendChild(DisplayPlaylist);
+    BeatsPlaylist.style.overflow = "scroll";
+    BeatsPlaylist.style.scrollbarWidth = "none";
       AddToCartBtn.onclick = function() {
       LicenseModalContainer.style.display = "block";    
       LicenseModal.innerHTML = `<div id ="CloseModal" class="CloseButton" onclick= "closeModal()" style="margin-left: 60vw;" >×</div>
@@ -146,12 +157,12 @@ function displayTracksFromPlaylist() {
                                     </div>
                                     <div class="DifferentLicenses">
                                         <h1 class="Licenses"> PREMIUM </h1>
-                                        <h1 class="LeasePrices"> $49.99</h1>
+                                        <h1 class="LeasePrices"> ${element.licenses.wav}</h1>
                                         <button id="WAVLease" onclick = "AddToCart('${element.title}',${element.licenses.wav})"  data-id="2" data-name="WAVLease" data-price="49" class="AddToCart">ADD TO CART</button>
                                     </div>
                                     <div class="DifferentLicenses">
                                         <h1 class="Licenses"> TRACKOUTS </h1>
-                                        <h1 class="LeasePrices"> $99.99</h1>
+                                        <h1 class="LeasePrices"> ${element.licenses.trackouts}</h1>
                                         <button id="TrackOutLease" onclick = "AddToCart('${element.title}',${element.licenses.trackouts})"  data-id="3" data-name="TrackOutLease" data-price="99" class="AddToCart">ADD TO CART</button>
                                     </div>         
                                 </div>     
@@ -166,15 +177,13 @@ function displayTracksFromPlaylist() {
                                   <h1 id="BeatDuration"> ${element.duration}</h1>
                                   <div id="DownloadFile">
                                   <div id="YoutubeSubscription">
-                                      <form action="post">
                                       <h1>Subscribe To My Youtube</h1>
-                                      <button>Download Now</button>
-                                      </form>
+                                      <button onclick="subscribeToChannel()">Download Now</button>
                                   </div>`
       }
     })
 }
-
+displayTracksFromPlaylist()
 
 //Search Through Playlist
 function searchPlaylist(searchTerm) {
@@ -195,14 +204,7 @@ function searchPlaylist(searchTerm) {
 }
 
 function displayResults(results) {
-  const resultsList = document.getElementById('BeatsFromPlaylist');
-  const SearchPlaylistButton = document.getElementById('SearchIcon');
-  SearchPlaylistButton.innerHTML = `<div>&#x2193;</div>`
-  SearchPlaylistButton.style.rotate ="90deg";
-  SearchPlaylistButton.style.marginLeft = "4vw";
-  SearchPlaylistButton.addEventListener('click', function(){
-    PlaylistModal.style.display = "none";
-  });
+  const resultsList = document.getElementById('BeatsPlaylist');
   resultsList.innerHTML = ''; // Clear previous results
   results.forEach(beat => {
     const li = document.createElement('div');
@@ -275,9 +277,9 @@ function displayResults(results) {
 
 
 function playFromPlaylist() {
-    PlaylistModal.addEventListener("click",(e) => {
+    BeatsPlaylist.addEventListener("click",(e) => {
         if(e.target.classList.contains("BeatTitle")) {
-          //alert(e.target.innerHTML);
+          alert(e.target.innerHTML);
           const indexNum = playlist.findIndex((element, index, arr) => { 
             if (element.title === e.target.innerText) {
               return true;
@@ -286,7 +288,7 @@ function playFromPlaylist() {
           loadBeat(indexNum);
           Beat.play();
           PlayPauseBtn.innerHTML = '<span> || </span>'; 
-          PlaylistModal.style.display = "none";
+//          PlaylistModal.style.display = "none";
         }
       }); 
 }
@@ -308,6 +310,7 @@ function AddToCart(name, price){
   }
   console.log(cart)
   alert('Item added to cart!')
+  closeModal();
   updateCartUI();
 }
 
@@ -332,4 +335,80 @@ function closeModal() {
   LicenseModalContainer.style.display = "none";
   DownloadModalContainer.style.display = "none";
   CartPopUpContainer.style.display = "none";  
+  popupMenu.style.display = "none";
 }
+
+// Subscribe To Youtube Channel For Beat Download
+
+async function subscribeToChannel(targetChannelId, accessToken) {
+    const url = 'https://googleapis.com';
+    
+    const body = {
+        snippet: {
+            resourceId: {
+                kind: 'youtube#channel',
+                channelId: targetChannelId
+            }
+        }
+    };
+
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${accessToken}`,
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(body)
+        });
+
+        if (!response.ok) {
+            const error = await response.json();
+            console.error('Subscription failed:', error);
+            return;
+        }
+
+        const data = await response.json();
+        console.log('Successfully subscribed:', data);
+    } catch (err) {
+        console.error('Network or Authorization error:', err);
+    }
+}
+
+
+/* // Subscribe To NewsLetter Custom Form Submit Action
+const form = document.getElementById('form');
+const result = document.getElementById('result');
+
+form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const object = Object.fromEntries(formData);
+//    console.log(object);
+    const json = JSON.stringify(object);
+    form.style.display = "none";
+    result.style.display = "block";
+    result.innerHTML = "Please wait...";
+    try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: json // Send the JSON data
+        });
+        const data = await response.json(); // Parse the JSON response
+            if (data.success) {
+                result.innerHTML = "Form Submitted Successfully!";
+                form.reset(); // Reset the form fields
+            } else {
+                result.innerHTML = data.message;
+            }
+    } 
+    catch (error) {
+        console.error('Error:', error);
+        result.innerHTML = "Something went wrong!";
+    }
+}); */

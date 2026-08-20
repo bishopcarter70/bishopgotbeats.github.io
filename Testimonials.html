@@ -6,10 +6,20 @@
     <link rel="stylesheet" href="BishopGotBeats.css">
 </head>
 <header>
+    <div id="NavToggle" style="font-size: 2rem; margin-top: 2vh;">&#x2630;</div>
+    <nav id="popupMenu" class="nav-popup">
+        <button id="closeBtn" class="close-btn" onclick="closeModal()">✕ Close</button>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="About Me.html">About Me</a></li>
+            <li><a href="#">Licenses</a></li>
+            <li><a href="Testimonials.html">Testimonials</a></li>
+        </ul>
+    </nav>
     <div id="Logo" onclick="window.location.href='index.html'"> 
-        <img src="BishopGotBeatsLogo59x65.png" style="margin-left: 4vw; margin-top: 1vh;">
+        <img src="BishopGotBeatsLogo59x65.png" style="margin-top: 1vh;">
     </div>
-    <div id="CartContainer" style="margin-top: 1vh;">
+    <div id="CartContainer">
         <div id="Cart">&#x1F6D2;</div>
         <h1 id="CartQuantity">0</h1>
     </div>
@@ -19,12 +29,7 @@
     <section id="Testimonials">
         <h1 style="text-align: center; font-size: 1rem;"> BishopGotBeats Discography </h1>
         <div class="TestimonialsContainer">
-            <picture>
-                    <source srcset="MixedByEl120x120.jpg" media="(width < 400px)">
-                    <source srcset="MixedByEl254x192.jpg" media="(width < 700px)">
-                    <source srcset="MixedByEl455x144.jpg" media="(width < 800px)"> 
-                    <img src="MixedByEl455x144.jpg"  style="width: 33vw; height: 25vh;" alt="StripeSoundsBeatz">
-            </picture>
+            <img src="MixedByEl360x120.jpg"  style="width: 100vw; height: 37.5vh;" alt="MixedByEl">
             <div class="ArtistsTestimonials">
                 <div id="DiscographyInfoSong" style="text-align: center; font-size: 0.5rem;">
                     <h1 class="SongTitle"> Want From Me </h1>
@@ -38,12 +43,7 @@
             </div>
         </div>
         <div class="TestimonialsContainer">
-            <picture>
-                    <source srcset="MixedByEl120x120.jpg" media="(width < 400px)">
-                    <source srcset="MixedByEl254x192.jpg" media="(width < 700px)">
-                    <source srcset="MixedByEl455x144.jpg" media="(width < 800px)"> 
-                    <img src="MixedByEl455x144.jpg"  style="width: 33vw; height: 25vh;" alt="StripeSoundsBeatz">
-            </picture>
+            <img src="MixedByEl360x120.jpg"  style="width: 100vw; height: 37.5vh;" alt="MixedByEl">
             <div class="ArtistsTestimonials">
                 <div id="DiscographyInfoSong" style="text-align: center; font-size: 0.5rem;">
                     <h1 class="SongTitle"> Want From Me </h1>
@@ -57,12 +57,7 @@
             </div>
         </div>
         <div class="TestimonialsContainer">
-            <picture>
-                    <source srcset="MixedByEl120x120.jpg" media="(width < 400px)">
-                    <source srcset="MixedByEl254x192.jpg" media="(width < 700px)">
-                    <source srcset="MixedByEl455x144.jpg" media="(width < 800px)"> 
-                    <img src="MixedByEl455x144.jpg"  style="width: 33vw; height: 25vh;" alt="StripeSoundsBeatz">
-            </picture>
+            <img src="MixedByEl360x120.jpg"  style="width: 100vw; height: 37.5vh;" alt="MixedByEl">
             <div class="ArtistsTestimonials">
                 <div id="DiscographyInfoSong" style="text-align: center; font-size: 0.5rem;">
                     <h1 class="SongTitle"> Want From Me </h1>
@@ -101,18 +96,6 @@
                 <h1>PRIVACY POLICY</h1>
                 <h2>LICENSES</h2>
             </div>    
-        </div>
-        <div id="NewsLetterSignup">
-            <h1> SignUp For The Newsletter </h1>
-            <label for="Name"> Name</label>
-            <br>
-            <input type="text" name="Name" placeholder="Name">
-            <br>
-            <label for="Email"> Email</label>
-            <br>
-            <input type="text" name="Name" placeholder="Enter Your Email">
-            <br>
-            <input type="submit" name="Name">
         </div>
     </div>   
     <div>

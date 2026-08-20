@@ -6,10 +6,20 @@
     <link rel="stylesheet" href="BishopGotBeats.css">
 </head>
 <header>
+    <div id="NavToggle" style="font-size: 2rem; margin-top: 2vh;">&#x2630;</div>
+    <nav id="popupMenu" class="nav-popup">
+        <button id="closeBtn" class="close-btn" onclick="closeModal()">✕ Close</button>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="About Me.html">About Me</a></li>
+            <li><a href="#">Licenses</a></li>
+            <li><a href="Testimonials.html">Testimonials</a></li>
+        </ul>
+    </nav>
     <div id="Logo" onclick="window.location.href='index.html'"> 
-        <img src="BishopGotBeatsLogo59x65.png" style="margin-left: 4vw; margin-top: 1vh;">
+        <img src="BishopGotBeatsLogo59x65.png" style="margin-top: 1vh;">
     </div>
-    <div id="CartContainer" style="margin-top: 1vh;">
+    <div id="CartContainer">
         <div id="Cart">&#x1F6D2;</div>
         <h1 id="CartQuantity">0</h1>
     </div>
@@ -28,12 +38,7 @@
         </div>
     </div>
     <section id="Biography">
-        <picture>
-				<source srcset="BishopGotBeats180x120.jpg" media="(width < 360px)">
-				<source srcset="BishopGotBeats380x180.jpg" media="(width < 810px)">
-				<source srcset="BishopGotBeats640x150.jpg" media="(width < 1000px)">
-				<img src="BishopGotBeats640x150.jpg" style="width: 49.5vw; height: 25vh;" alt="BishopGotBeatsDreads">
-		</picture>
+        <img src="BishopGotBeats768x192.jpg" style="width: 100vw; height: 27.5vh;" alt="BishopGotBeatsDreads">
         <div id="BiographyText">
             <p style="text-indent: 5vw;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
@@ -43,11 +48,11 @@
                 pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
                 culpa qui officia deserunt mollit anim id est laborum.            
             </p>
-        </div>
+        </div> 
     </section>
     <section id="Biography">
         <div id="BiographyText">
-            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+            <p style="text-indent: 5vw;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
                 nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
@@ -55,25 +60,14 @@
                 pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
                 culpa qui officia deserunt mollit anim id est laborum.            
             </p>
-        </div>
-        <picture>
-				<source srcset="BishopGotBeatsGuitar180x120.jpg"media="(width < 360px)">
-				<source srcset="BishopGotBeatsGuitar384x193.jpg" media="(width < 810px)">
-				<source srcset="BishopGotBeatsGuitar683x146.jpg" media="(width < 1000px)">
-				<img src="BishopGotBeatsGuitar683x146.jpg" style="width: 49vw; height: 25vh;" alt="BishopGotBeatsDreads">
-		</picture>
+        </div>       
     </section>
     <section class="OtherOnlinePlatforms">
     <!-- <span id="AboutTwitchLiveStream"> </span> --> 
         <div class="SocialsContainer">
-            <div style="margin: auto;">
-                <a href="https://www.twitch.tv/stripesounds"> 
-                    <picture>
-                    <source srcset="TwitchLogoTwo156x52.png" media="(width < 560px)">
-                    <source srcset="TwitchLogoTwo272x89.png" media="(width < 870px)">
-                    <source srcset="TwitchLogoTwo436x144.png" media="(width > 1000px)">
-                    <img src="TwitchLogoTwo436x144.png" alt="StripeSoundsBeatz">
-                    </picture>
+            <div style="display: flex; justify-content: center;">
+                <a> 
+                    <img src="TwitchLogoTwo242x80.png" alt="StripeSoundsBeatz">
                 </a>
             </div>
             <div class="SocialsTakeAction">
@@ -88,26 +82,24 @@
             </div>
         </div>
     </section>
-    <section class="OtherOnlinePlatforms">
+     <section class="OtherOnlinePlatforms">
     <!-- <span id="AboutTwitchLiveStream"> </span> --> 
         <div class="SocialsContainer">
             <div class="SocialsTakeAction">
-                <h1> Live On Youtube Every Wednesdays From 5PM EST Time            
+                <h1> Live On Twitch Every Wednesdays From 5PM EST Time            
                 </h1>
                 <p style="font-size: 0.750rem;">
                     I will be Making Beats, Recording & Mixing Songs. Join Me On This 1 Hour Daily Journey.
                 </p>
-                <a href="https://www.youtube.com/@bishopgotbeats/?sub_confirmation=1">
+                <a href="https://www.youtube.com/@bishopgotbeats">
                     <button> Subscribe </button>
                 </a>
             </div>
-            <div style="margin: auto;">
+            <div style="display: flex; justify-content: center;">
                 <a href="https://www.youtube.com/@bishopgotbeats"> 
                     <picture>
                     <source srcset="YTLogo204x127.png" media="(width < 560px)">
-                    <source srcset="YTLogo356x219.png" media="(width < 870px)">
-                    <source srcset="YTLogo522x321.png" media="(width > 1000px)">
-                    <img src="YTLogo522x321.png" alt="YouTubeLogo">
+                    <img src="YTLogo204x127.png" alt="YoutubeLogo">
                     </picture>
                 </a>
             </div>
@@ -137,18 +129,6 @@
                 <h1>PRIVACY POLICY</h1>
                 <h2>LICENSES</h2>
             </div>    
-        </div>
-        <div id="NewsLetterSignup">
-            <h1> SignUp For The Newsletter </h1>
-            <label for="Name"> Name</label>
-            <br>
-            <input type="text" name="Name" placeholder="Name">
-            <br>
-            <label for="Email"> Email</label>
-            <br>
-            <input type="text" name="Name" placeholder="Enter Your Email">
-            <br>
-            <input type="submit" name="Name">
         </div>
     </div>   
     <div>
